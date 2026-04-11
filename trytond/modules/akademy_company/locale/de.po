@@ -110,7 +110,7 @@ msgstr "Telefon"
 
 msgctxt "field:company.student.supervisor,is_primary:"
 msgid "Principal"
-msgstr "Hauptseite"
+msgstr "Erster"
 
 msgctxt "field:company.student.supervisor,student:"
 msgid "Discente"

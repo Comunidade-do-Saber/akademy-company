@@ -1,8 +1,7 @@
 # 🏫 SAGE Education - Institutional Management / ERP
 
-**Version:** 1.3.x   
-**Module:** Akademy Company    
-**Developer:** Zacarias Juliano Capingala *(FPC)*     
+**Module:** Akademy Company   
+**Version:** 7.0.x        
 
 
 ---
@@ -89,8 +88,8 @@ It is designed to be used by **schools, training centers, universities, and educ
 ### 🌐 Homepage
   
 **Website:** [sage-edu.comunidadedosaber.ao](https://sage-edu.comunidadedosaber.ao)  
-**App:** [sage.comunidadedosaber.ao](https://sage-edu.comunidadedosaber.ao)  
-**Docs:** [docs.comunidadedosaber.ao](https://sage-edu.comunidadedosaber.ao)  
+**App:** [sage.comunidadedosaber.ao](https://sage.comunidadedosaber.ao)  
+**Docs:** [docs.comunidadedosaber.ao](https://docs.comunidadedosaber.ao)  
 **Team:** [comunidadedosaber.ao](https://comunidadedosaber.ao)  
 **PyPi:** [SAGE Edu](https://pypi.org/user/comunidade_do_saber)
 
