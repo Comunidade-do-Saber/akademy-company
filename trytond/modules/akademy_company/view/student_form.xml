@@ -18,7 +18,7 @@ this repository contains the full copyright notices and license terms. -->
         <field name="end_date"/> 
     </group>
     <notebook colspan="4">
-        <page string="Encarregado" id="student_supervisor">
+        <page string="Guardian" id="student_supervisor">
             <field name="student_supervisor" mode="tree,form" colspan="4"
                 view_ids="akademy_company.student_supervisor_view_tree,akademy_company.student_supervisor_view_form"/>
         </page>

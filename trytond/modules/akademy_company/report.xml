@@ -6,7 +6,7 @@ this repository contains the full copyright notices and license terms. -->
 	<data>
         <!-- start company_report -->
         <record model="ir.action.report" id="company_report">
-            <field name="name">Instituição</field>
+            <field name="name">Institution</field>
             <field name="report_name">akademy_report.company.report</field>
             <field name="model">company.company</field>
             <field name="report">akademy_company/reports/company.fodt</field>
@@ -20,7 +20,7 @@ this repository contains the full copyright notices and license terms. -->
 
         <!-- start employee_report -->
         <record model="ir.action.report" id="employee_report">
-            <field name="name">Funcionários</field>
+            <field name="name">Employee</field>
             <field name="report_name">akademy_report.company.employee.report</field>
             <field name="model">company.employee</field>
             <field name="report">akademy_company/reports/employee.fodt</field>
@@ -34,7 +34,7 @@ this repository contains the full copyright notices and license terms. -->
 
         <!-- start student_report -->
         <record model="ir.action.report" id="student_report">
-            <field name="name">Discente</field>
+            <field name="name">Student</field>
             <field name="report_name">akademy_report.company.student.report</field>
             <field name="model">company.student</field>
             <field name="report">akademy_company/reports/student.fodt</field>

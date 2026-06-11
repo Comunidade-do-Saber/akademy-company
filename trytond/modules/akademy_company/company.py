@@ -1,52 +1,48 @@
 # This file is part of SAGE Education.   The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
-
 from trytond.model import ModelSQL, ModelView, fields, Unique
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, If
 from trytond.pool import PoolMeta
 from datetime import date
 
-
 _DEGREE_KINSHIP = [
-    # Parentesco direto (linha reta)
-    ('pai', 'Pai'),
-    ('mae', 'Mãe'),
-    ('padrasto', 'Padrasto'),
-    ('madrasta', 'Madrasta'),
-    ('filho', 'Filho'),
-    ('filha', 'Filha'),
-    ('avo', 'Avô'),
-    ('avoa', 'Avó'),
-    ('bisavo', 'Bisavô'),
-    ('bisavoa', 'Bisavó'),
+    # Direct kinship (straight line)
+    ('father', 'Father'),
+    ('mother', 'Mother'),
+    ('stepfather', 'Stepfather'),
+    ('stepmother', 'Stepmother'),
+    ('son', 'Son'),
+    ('daughter', 'Daughter'),
+    ('grandmother', 'Grandmother'),
+    ('grandfather', 'Grandfather'),
+    ('great_grandmother', 'Great grandmother'),
+    ('great_grandfather', 'Great grandfather'),
 
-    # Parentesco colateral
-    ('irmao', 'Irmão'),
-    ('irma', 'Irmã'),
-    ('tio', 'Tio'),
-    ('tia', 'Tia'),
-    ('primo', 'Primo'),
-    ('prima', 'Prima'),
-    ('sobrinho', 'Sobrinho'),
-    ('sobrinha', 'Sobrinha'),
+    # Collateral kinship
+    ('brother', 'Brother'),
+    ('sister', 'Sister'),
+    ('uncle', 'Uncle'),
+    ('aunt', 'Aunt'),
+    ('cousin', 'Cousin'),
+    ('nephew', 'Nephew'),
+    ('niece', 'Niece'),
 
-    # Afinidade ou tutela
-    ('tutor_legal', 'Tutor Legal'),
-    ('encarregado', 'Encarregado'),
-    ('guardiao', 'Guardião'),
-    ('cuidador', 'Cuidador(a)'),
-    ('companheiro_pai', 'Companheiro(a) do Pai'),
-    ('companheiro_mae', 'Companheiro(a) da Mãe'),
-    ('padrinho', 'Padrinho'),
-    ('madrinha', 'Madrinha'),
+    # Affinity or guardianship
+    ('legal_guardian', 'Legal Guardian'),
+    ('supervisor', 'Supervisor'),
+    ('guardian', 'Guardian'),
+    ('caregiver', 'Caregiver'),
+    ('father_partner', 'Father Partner'),
+    ('mother_partner', 'Mother Partner'),
+    ('godfather', 'Godfather'),
+    ('godmother', 'Godmother'),
 
-    # Outros vínculos
-    ('amigo_familia', 'Amigo da Família'),
-    ('responsavel', 'Responsável'),
-    ('outro', 'Outro'),
+    # Other links
+    ('family_friend', 'Family Friend'),
+    ('responsible', 'Responsible'),
+    ('other', 'Other'),
 ]
-
 
 
 class Company(metaclass=PoolMeta):
@@ -60,7 +56,7 @@ class Company(metaclass=PoolMeta):
             ], required=True,
         ondelete='CASCADE')
     student = fields.One2Many('company.student', 'company', 'Discentes',
-        help="Adicionar discentes a instituição.")
+        help="Add students to the institution.")
 
 
 class Employee(metaclass=PoolMeta):
@@ -68,19 +64,8 @@ class Employee(metaclass=PoolMeta):
     __name__ = 'company.employee'
        
     teacher = fields.Boolean(
-        'Docente', 
-        help="A entidade será tratada como docente.")
-    party = fields.Many2One(
-        'party.party', 'Entidade', 
-        domain=[
-            ('is_person', '=', True)
-            ], required=True, 
-        context={
-            'company': If(
-                Eval('company', -1) >= 0, Eval('company', None), None),
-            },
-        depends={'company'}, ondelete="RESTRICT",
-        help="Escolha a entidade que vau representar o funcionário.")
+        'Teacher', 
+        help="The entity will be treated as a teacher.")
 
     @classmethod
     def __setup__(cls):
@@ -88,7 +73,7 @@ class Employee(metaclass=PoolMeta):
         table = cls.__table__()
         cls._sql_constraints = [
             ('key', Unique(table, table.party, table.company), 
-            u'Não foi possível cadastrar o(a) novo(a) funcionário(a), por favor verificar se o(a) funcionário(a) já existe.')
+            u'We were unable to register the new employee; please check if the employee already exists.')
         ]
         cls._order = [('party', 'ASC')]
 
@@ -101,8 +86,8 @@ class Student(ModelSQL, ModelView):
     'Student'
     __name__ = 'company.student'
 
-    code = fields.Char('Nº de matrícula', size=20,
-        help="Número de matrícula do discente.")
+    code = fields.Char('Matriculation Number', size=20,
+        help="Student matriculation number.")
     start_date = fields.Date('Início',
         domain=[
                 If(
@@ -111,8 +96,8 @@ class Student(ModelSQL, ModelView):
                     (),
                 )
             ], depends={'end_date'},
-        required=True, help="Início da formação.")
-    end_date = fields.Date('Fim',
+        required=True, help="Start of training.")
+    end_date = fields.Date('End',
         domain=[
                 If(
                     (Eval('start_date')) & (Eval('end_date')),
@@ -120,18 +105,18 @@ class Student(ModelSQL, ModelView):
                     (),
                 )
             ], depends=['start_date'],
-        help="Fim da formação.")    
+        help="End of training.")    
     party = fields.Many2One(
-        'party.party', 'Entidade', 
+        'party.party', 'Entity', 
         required=True, domain=[
             ('is_person', '=', True)
             ], ondelete="RESTRICT",
-        help="Nome do discente.")
+        help="Student name.")
     company = fields.Many2One(
-        'company.company', 'Instituição', required=True, 
-        ondelete="RESTRICT", help="Nome da instituição.")     
+        'company.company', 'Institution', required=True, 
+        ondelete="RESTRICT", help="Institution name.")     
     student_supervisor = fields.One2Many('company.student.supervisor', 
-        'student', 'Discente')      
+        'student', 'Student Supervisor')      
     
     @classmethod
     def __setup__(cls):
@@ -139,7 +124,7 @@ class Student(ModelSQL, ModelView):
         table = cls.__table__()
         cls._sql_constraints = [
             ('key', Unique(table, table.party, table.company),
-            u'Não foi possível cadastrar o(a) novo(a) discente, por favor verificar se o(a) discente já existe.')
+            u'It was not possible to register the new student, please check if the student already exists.')
         ]
         cls._order = [('party', 'ASC')]
         
@@ -168,15 +153,15 @@ class StudentSupervisor(ModelSQL, ModelView):
     'Student Supervisor'
     __name__ = 'company.student.supervisor'    
 	
-    description = fields.Text('Descrição')
+    description = fields.Text('Description')
     degree_kinship = fields.Selection(_DEGREE_KINSHIP, 
-        string=u'Grau parentesco', required=True)
-    phone_number = fields.Char('Telefone', size=20,
-        help="Número de telefone")
-    is_primary = fields.Boolean('Principal', 
-        help='Indica se é o encarregado principal')    
-    student = fields.Many2One('company.student', 'Discente', required=True)
-    party = fields.Many2One('party.party', 'Encarregado', required=True)
+        string=u'Kinship Degree', required=True)
+    phone_number = fields.Char('Phone Number', size=20,
+        help="Phone Number")
+    is_primary = fields.Boolean('Primary', 
+        help='Indicates whether you are the main person in charge.')    
+    student = fields.Many2One('company.student', 'Student', required=True)
+    party = fields.Many2One('party.party', 'Guardian', required=True)
 
     @classmethod
     def __setup__(cls):
@@ -184,7 +169,7 @@ class StudentSupervisor(ModelSQL, ModelView):
         table = cls.__table__()
         cls._sql_constraints = [
             ('key', Unique(table, table.party, table.student), 
-            u'Não foi possível cadastrar o(a) novo(a) encarregado(a), por favor verificar se o(a) encarregado(a) já está associado ao discente.')
+            u'It was not possible to register the new guardian, please check if the guardian is already associated with the student.')
         ]
 
     def get_rec_name(self, name):
