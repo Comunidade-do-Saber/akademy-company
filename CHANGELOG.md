@@ -4,6 +4,15 @@ All changes made in **akademy-company** project will be listed in this file.
 The format as follows the recomendations of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). And Semantic Versioning
 
 
+## [8.0.0] - 2026-10-25
+### Changed
+- Update to Tryton version 8.0
+
+### Added
+- Copyright
+- Project guidelines
+
+
 ## [7.0.1] - 2026-06-01
 ### Changed
 - Translated Source Code from Portuguese to English

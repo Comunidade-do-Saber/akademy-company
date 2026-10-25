@@ -2,47 +2,35 @@
 <!-- This file is part of SAGE Education.   The COPYRIGHT file at the top level of
 this repository contains the full copyright notices and license terms. -->
 
-<!-- GROUP OF PERMISSIONS FOR TEACHER USERS -->
+<!-- Group of Permissions for Teacher users -->
 <tryton>
     <data>
-        <!-- Access to the Company menu -->
-        <record model="ir.ui.menu-res.group" 
-            id="akademy_company-group_akademy_teacher">
-            <field name="menu" ref="akademy_company"/>
-            <field name="group" ref="akademy_party.group_akademy_teacher"/>
-        </record>
-
-        <!-- Access to the Employee menu -->
         <record model="ir.ui.menu-res.group" 
             id="akademy_employee-group_akademy_teacher">
             <field name="menu" ref="akademy_employee"/>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
         </record>
 
-        <!-- Access to the Student menu -->
         <record model="ir.ui.menu-res.group" 
             id="akademy_company_student-group_akademy_teacher">
             <field name="menu" ref="akademy_company_student"/>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
         </record>
 
-        <!-- Defining Rules for Accessing Models -->
-        <!-- Company Model -->
         <record model="ir.model.access" 
             id="access_akademy_companies-group_akademy_teacher">
-            <field name="model" search="[('model', '=', 'company.company')]"/>
+            <field name="model">company.company</field>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <!-- access rule group -->
+        
         <record model="ir.rule.group" 
             id="rule_group_akademy_companies-group_akademy_teacher">
-            <field name="name">Instituição</field>
-            <field name="model" 
-                search="[('model', '=', 'company.company')]"/>
+            <field name="name">Institution</field>
+            <field name="model">company.company</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
             <field name="perm_read" eval="True"/>
@@ -56,23 +44,20 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
         </record>
 
-        <!-- Defining Rules for Accessing Models -->
-        <!-- EMPLOYEE Model -->
         <record model="ir.model.access" 
-            id="access_akademy_emploies-group_akademy_teacher">
-            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            id="access_akademy_employees-group_akademy_teacher">
+            <field name="model">company.employee</field>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <!-- access rule group -->
+        
         <record model="ir.rule.group" 
-            id="rule_group_akademy_emploies-group_akademy_teacher">
-            <field name="name">Funcionários</field>
-            <field name="model" 
-                search="[('model', '=', 'company.employee')]"/>
+            id="rule_group_akademy_employees-group_akademy_teacher">
+            <field name="name">Employees</field>
+            <field name="model">company.employee</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
             <field name="perm_read" eval="True"/>
@@ -81,28 +66,25 @@ this repository contains the full copyright notices and license terms. -->
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.rule.group-res.group" 
-            id="res_group_akademy_emploies-group_akademy_teacher">
-            <field name="rule_group" ref="rule_group_akademy_emploies-group_akademy_teacher"/>
+            id="res_group_akademy_employees-group_akademy_teacher">
+            <field name="rule_group" ref="rule_group_akademy_employees-group_akademy_teacher"/>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
         </record>
 
-        <!-- Defining Rules for Accessing Models -->
-        <!-- Student Model -->
         <record model="ir.model.access" 
             id="access_akademy_students-group_akademy_teacher">
-            <field name="model" search="[('model', '=', 'company.student')]"/>
+            <field name="model">company.student</field>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <!-- access rule group -->
+        
         <record model="ir.rule.group" 
             id="rule_group_akademy_students-group_akademy_teacher">
-            <field name="name">Discentes</field>
-            <field name="model" 
-                search="[('model', '=', 'company.student')]"/>
+            <field name="name">Students</field>
+            <field name="model">company.student</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
             <field name="perm_read" eval="True"/>
@@ -116,23 +98,20 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
         </record>
 
-        <!-- Defining Rules for Accessing Models -->
-        <!-- Student Supervisor Model --> 
         <record model="ir.model.access" 
             id="access_akademy_student_supervisors-group_akademy_teacher">
-            <field name="model" search="[('model', '=', 'company.student.supervisor')]"/>
+            <field name="model">company.student.supervisor</field>
             <field name="group" ref="akademy_party.group_akademy_teacher"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <!-- access rule group -->
+        
         <record model="ir.rule.group" 
             id="rule_group_akademy_student_supervisors-group_akademy_teacher">
-            <field name="name">Encarregado de Educação</field>
-            <field name="model" 
-                search="[('model', '=', 'company.student.supervisor')]"/>
+            <field name="name">Student Supervisor</field>
+            <field name="model">company.student.supervisor</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
             <field name="perm_read" eval="True"/>

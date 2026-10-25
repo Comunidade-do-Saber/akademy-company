@@ -2,9 +2,125 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "model:company.company,name:"
-msgid "Company"
-msgstr "Organization"
+msgctxt "field:company.company,student:"
+msgid "Students"
+msgstr "Discentes"
+
+msgctxt "field:company.employee,teacher:"
+msgid "Teacher"
+msgstr "Docente"
+
+msgctxt "field:company.student,code:"
+msgid "Matriculation Number"
+msgstr "Nº de matrícula"
+
+msgctxt "field:company.student,company:"
+msgid "Institution"
+msgstr "Instituição"
+
+msgctxt "field:company.student,end_date:"
+msgid "End"
+msgstr "Fim"
+
+msgctxt "field:company.student,party:"
+msgid "Entity"
+msgstr "Entidade"
+
+msgctxt "field:company.student,start_date:"
+msgid "Start"
+msgstr "Início"
+
+msgctxt "field:company.student,student_supervisor:"
+msgid "Student Supervisor"
+msgstr "Encarregado de educação"
+
+msgctxt "field:company.student.supervisor,degree_kinship:"
+msgid "Kinship Degree"
+msgstr "Grau parentesco"
+
+msgctxt "field:company.student.supervisor,description:"
+msgid "Description"
+msgstr "Descrição"
+
+msgctxt "field:company.student.supervisor,is_primary:"
+msgid "Primary"
+msgstr "Principal"
+
+msgctxt "field:company.student.supervisor,party:"
+msgid "Guardian"
+msgstr "Encarregado"
+
+msgctxt "field:company.student.supervisor,phone_number:"
+msgid "Phone Number"
+msgstr "Telefone"
+
+msgctxt "field:company.student.supervisor,student:"
+msgid "Student"
+msgstr "Discente"
+
+msgctxt "field:party.party,student:"
+msgid "Students"
+msgstr "Discentes"
+
+msgctxt "help:company.company,student:"
+msgid "Add students to the institution."
+msgstr "Adicionar discentes a instituição."
+
+msgctxt "help:company.employee,teacher:"
+msgid "The entity will be treated as a teacher."
+msgstr "A entidade será tratada como docente."
+
+msgctxt "help:company.student,code:"
+msgid "Student matriculation number."
+msgstr "Número de matrícula do discente."
+
+msgctxt "help:company.student,company:"
+msgid "Institution name."
+msgstr "Nome da instituição."
+
+msgctxt "help:company.student,end_date:"
+msgid "End of training."
+msgstr "Fim da formação."
+
+msgctxt "help:company.student,party:"
+msgid "Student name."
+msgstr "Nome do discente."
+
+msgctxt "help:company.student,start_date:"
+msgid "Start of training."
+msgstr "Início da formação."
+
+msgctxt "help:company.student.supervisor,is_primary:"
+msgid "Indicates whether you are the main person in charge."
+msgstr "Indica se é o encarregado principal."
+
+msgctxt "help:company.student.supervisor,phone_number:"
+msgid "Phone Number"
+msgstr "Número de telefone."
+
+msgctxt "model:company.student,string:"
+msgid "Company Student"
+msgstr "Discentes"
+
+msgctxt "model:company.student.supervisor,string:"
+msgid "Company Student Supervisor"
+msgstr "Encarregado de Educação"
+
+msgctxt "model:ir.action,name:act_company_student"
+msgid "Students"
+msgstr "Discentes"
+
+msgctxt "model:ir.action,name:company_report"
+msgid "Institution"
+msgstr "Instituição"
+
+msgctxt "model:ir.action,name:employee_report"
+msgid "Employee"
+msgstr "Funcionário"
+
+msgctxt "model:ir.action,name:student_report"
+msgid "Student"
+msgstr "Discente"
 
 msgctxt "model:ir.ui.menu,name:akademy_company"
 msgid "Institution"
@@ -18,161 +134,37 @@ msgctxt "model:ir.ui.menu,name:akademy_employee"
 msgid "Employees"
 msgstr "Funcionários"
 
-msgctxt "field:company.company,party:"
-msgid "Entity"
-msgstr "Entidade"
-
-msgctxt "field:company.company,student:"
-msgid "Students"
-msgstr "Discentes"
-
-msgctxt "view:company.student:"
-msgid "Students"
-msgstr "Discentes"
-
-msgctxt "model:company.employee,employee:"
-msgid "Employee"
-msgstr "Employee"
-
-msgctxt "field:company.employee,teacher:"
-msgid "Teacher"
-msgstr "Docente"
-
-msgctxt "field:company.employee,party:"
-msgid "Entity"
-msgstr "Entidade"
-
-msgctxt "model:company.student,name:"
-msgid "Student"
-msgstr "Student"
-
-msgctxt "field:company.student,code:"
-msgid "Matriculation Number"
-msgstr "Nº de matrícula"
-
-msgctxt "field:company.student,start_date:"
-msgid "Start"
-msgstr "Início"
-
-msgctxt "field:company.student,end_date:"
-msgid "End"
-msgstr "Fim"
-
-msgctxt "field:company.student,party:"
-msgid "Entity"
-msgstr "Entidade"
-
-msgctxt "field:company.student,company:"
-msgid "Institution"
-msgstr "Instituição"
-
-msgctxt "field:company.student,student_supervisor:"
-msgid "Student Supervisor"
-msgstr "Encarregado de Educação"
-
-msgctxt "view:company.student.supervisor:"
-msgid "Student Supervisor"
-msgstr "Encarregado de Educação"
-
-msgctxt "field:company.student.supervisor,description:"
-msgid "Description"
-msgstr "Descrição"
-
-msgctxt "field:company.student.supervisor,degree_kinship:"
-msgid "Kinship Degree"
-msgstr "Grau parentesco"
-
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Father"
-msgstr "Pai"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Mother"
-msgstr "Mãe"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Stepfather"
-msgstr "Padrasto"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Stepmother"
-msgstr "Madrasta"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Son"
-msgstr "Filho"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Daughter"
-msgstr "Filha"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Grandmother"
-msgstr "Avô"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Grandfather"
-msgstr "Avó"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Great grandmother"
-msgstr "Bisavô"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Great grandfather"
-msgstr "Bisavó"
+msgid "Aunt"
+msgstr "Tia"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
 msgid "Brother"
 msgstr "Irmão"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Sister"
-msgstr "Irmã"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Uncle"
-msgstr "Tio"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Aunt"
-msgstr "Tia"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Cousin"
-msgstr "Primo/a"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Nephew"
-msgstr "Sobrinho"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Niece"
-msgstr "Sobrinha"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Legal Guardian"
-msgstr "Tutor Legal"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Supervisor"
-msgstr "Encarregado"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Guardian"
-msgstr "Guardião"
-
-msgctxt "selection:company.student.supervisor,degree_kinship:"
 msgid "Caregiver"
 msgstr "Cuidador(a)"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Father Partner"
-msgstr "Companheiro(a) do Pai"
+msgid "Cousin"
+msgstr "Primo(a)"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Mother Partner"
-msgstr "Companheiro(a) da Mãe"
+msgid "Daughter"
+msgstr "Filha"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Family Friend"
+msgstr "Amigo da Família"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Father"
+msgstr "Pai"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Father Partner"
+msgstr "Companheiro(a) do Pai"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
 msgid "Godfather"
@@ -183,126 +175,73 @@ msgid "Godmother"
 msgstr "Madrinha"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Family Friend"
-msgstr "Amigo da Família"
+msgid "Grandfather"
+msgstr "Avó"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Grandmother"
+msgstr "Avô"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Great grandfather"
+msgstr "Bisavó"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Great grandmother"
+msgstr "Bisavô"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Guardian"
+msgstr "Guardião"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Legal Guardian"
+msgstr "Tutor Legal"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Mother"
+msgstr "Mãe"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Mother Partner"
+msgstr "Companheiro(a) da Mãe"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Nephew"
+msgstr "Sobrinho"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Niece"
+msgstr "Sobrinha"
+
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Other"
+msgstr "Outro"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
 msgid "Responsible"
 msgstr "Responsável"
 
 msgctxt "selection:company.student.supervisor,degree_kinship:"
-msgid "Other"
-msgstr "Outro"
+msgid "Sister"
+msgstr "Irmã"
 
-msgctxt "field:company.student.supervisor,phone_number:"
-msgid "Phone Number"
-msgstr "Telefone"
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Son"
+msgstr "Filho"
 
-msgctxt "field:company.student.supervisor,is_primary:"
-msgid "Primary"
-msgstr "Principal"
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Stepfather"
+msgstr "Padrasto"
 
-msgctxt "field:company.student.supervisor,student:"
-msgid "Student"
-msgstr "Discente"
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Stepmother"
+msgstr "Madrasta"
 
-msgctxt "field:company.student.supervisor,party:"
-msgid "Guardian"
-msgstr "Encarregado"
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Supervisor"
+msgstr "Supervisor(a)"
 
-msgctxt "help:company.company,student:"
-msgid "Add students to the institution."
-msgstr "Adicionar discentes a instituição."
-
-msgctxt "help:company.employee,teacher:"
-msgid "The entity will be treated as a teacher."
-msgstr "A entidade será tratada como docente."
-
-msgctxt "help:company.employee,party:"
-msgid "Choose the entity that will represent the employee."
-msgstr "Escolha a entidade que vai representar o funcionário."
-
-msgctxt "help:company.student,code:"
-msgid "Student matriculation number."
-msgstr "Número de matrícula do discente."
-
-msgctxt "help:company.student,start_date:"
-msgid "Start of training."
-msgstr "Início da formação."
-
-msgctxt "help:company.student,end_date:"
-msgid "End of training."
-msgstr "Fim da formação."
-
-msgctxt "help:company.student,party:"
-msgid "Student name."
-msgstr "Nome do discente."
-
-msgctxt "help:company.student,company:"
-msgid "Institution name."
-msgstr "Nome da instituição."
-
-msgctxt "help:company.student.supervisor,phone_number:"
-msgid "Phone Number"
-msgstr "Número de telefone."
-
-msgctxt "help:company.student.supervisor,is_primary:"
-msgid "Indicates whether you are the main person in charge."
-msgstr "Indica se é o encarregado principal."
-
-msgctxt "error:company.student:"
-msgid "It was not possible to register the new student, please check if the student "
-"already exists."
-msgstr "Não foi possível cadastrar o(a) novo(a) discente, por favor verificar se o(a) "
-"discente já existe."
-
-msgctxt "error:company.employee:"
-msgid "We were unable to register the new employee; please check if the employee already exists."
-msgstr "Não foi possível cadastrar o(a) novo(a) funcionário(a), por favor verificar se o(a) "
-"funcionário(a) já existe."
-
-msgctxt "error:company.student.supervisor:"
-msgid "It was not possible to register the new guardian, please check if the guardian is already "
-"associated with the student."
-msgstr "Não foi possível cadastrar o(a) novo(a) encarregado(a), por favor verificar se o(a) "
-"encarregado(a) já está associado ao discente."
-
-msgctxt "field:company.student,id:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "field:company.student,create_date:"
-msgid "Create Date"
-msgstr "Data de criaçãoe"
-
-msgctxt "field:company.student,create_uid:"
-msgid "Create User"
-msgstr "Criado por"
-
-msgctxt "field:company.student,write_date:"
-msgid "Write Date"
-msgstr "Data de modificação"
-
-msgctxt "field:company.student,write_uid:"
-msgid "Write User"
-msgstr "Modificação por"
-
-msgctxt "model:ir.action,name:company_report"
-msgid "Institution"
-msgstr "Instituição"
-
-msgctxt "model:ir.action,name:employee_report"
-msgid "Employee"
-msgstr "Funcionários"
-
-msgctxt "model:ir.action,name:student_report"
-msgid "Student"
-msgstr "Discente"
-
-msgctxt "view:company.company:"
-msgid "Students"
-msgstr "Discentes"
-
-msgctxt "view:company.student:"
-msgid "Guardian"
-msgstr "Encarregado"
+msgctxt "selection:company.student.supervisor,degree_kinship:"
+msgid "Uncle"
+msgstr "Tio"

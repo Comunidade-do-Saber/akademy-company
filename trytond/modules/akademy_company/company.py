@@ -55,7 +55,7 @@ class Company(metaclass=PoolMeta):
             ('is_institution', '=', True)
             ], required=True,
         ondelete='CASCADE')
-    student = fields.One2Many('company.student', 'company', 'Discentes',
+    student = fields.One2Many('company.student', 'company', 'Students',
         help="Add students to the institution.")
 
 
@@ -88,7 +88,7 @@ class Student(ModelSQL, ModelView):
 
     code = fields.Char('Matriculation Number', size=20,
         help="Student matriculation number.")
-    start_date = fields.Date('Início',
+    start_date = fields.Date('Start',
         domain=[
                 If(
                     (Eval('start_date')) & (Eval('end_date')),
@@ -113,8 +113,8 @@ class Student(ModelSQL, ModelView):
             ], ondelete="RESTRICT",
         help="Student name.")
     company = fields.Many2One(
-        'company.company', 'Institution', required=True, 
-        ondelete="RESTRICT", help="Institution name.")     
+        'company.company', 'Institution', ondelete="RESTRICT", 
+        help="Institution name.")     
     student_supervisor = fields.One2Many('company.student.supervisor', 
         'student', 'Student Supervisor')      
     
